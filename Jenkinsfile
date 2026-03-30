@@ -11,7 +11,7 @@ pipeline {
         stage('Deploy To Kubernetes') {
             steps {
                 script {
-                    withKubeConfig(caCertificate: '', clusterName: 'devopsshack-cluster', contextName: '', credentialsId: 'k8s-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://D5E7BBA4E37876C9B7A541997A84D83D.gr7.ap-south-1.eks.amazonaws.com') {
+                    withKubeConfig(caCertificate: '', clusterName: 'devopsshack-cluster', contextName: '', credentialsId: 'k8s-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://CF8B4F6427CDAF3A4A8ADD32CBF02203.gr7.eu-west-2.eks.amazonaws.com') {
                         sh 'kubectl apply -f Manifest/manifest.yaml -n webapps'
                         sh 'kubectl apply -f Manifest/ci.yaml'
                         sh 'kubectl apply -f Manifest/ingress.yaml -n webapps'
