@@ -11,7 +11,7 @@ pipeline {
         stage('Deploy To Kubernetes') {
             steps {
                 script {
-                    withKubeConfig(caCertificate: '', clusterName: 'devopsshack-cluster', contextName: '', credentialsId: 'k8s-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://CF8B4F6427CDAF3A4A8ADD32CBF02203.gr7.eu-west-2.eks.amazonaws.com') {
+                    withKubeConfig(caCertificate: '', clusterName: 'devopsshack-cluster', contextName: '', credentialsId: 'k8s-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://46D3EDEAC138A0155A12B5FF37776C09.gr7.eu-west-2.eks.amazonaws.com') {
                         sh 'kubectl apply -f Manifest/manifest.yaml -n webapps'
                         sh 'kubectl apply -f Manifest/ci.yaml'
                         sh 'kubectl apply -f Manifest/ingress.yaml -n webapps'
@@ -24,7 +24,7 @@ pipeline {
          stage('Verify The Deployment') {
             steps {
                 script {
-                    withKubeConfig(caCertificate: '', clusterName: 'devopsshack-cluster', contextName: '', credentialsId: 'k8s-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://CF8B4F6427CDAF3A4A8ADD32CBF02203.gr7.eu-west-2.eks.amazonaws.com') {
+                    withKubeConfig(caCertificate: '', clusterName: 'devopsshack-cluster', contextName: '', credentialsId: 'k8s-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://46D3EDEAC138A0155A12B5FF37776C09.gr7.eu-west-2.eks.amazonaws.com') {
                         sh 'kubectl get pods -n webapps'
                         sh 'kubectl get svc -n webapps'
                         sh 'kubectl get ingress -n webapps'
