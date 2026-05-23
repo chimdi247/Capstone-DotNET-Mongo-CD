@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: www.vhbj.site
+    - host: www.wsedf.online 
       http:
         paths:
           - path: /
@@ -20,7 +20,7 @@ spec:
                 name: dotnet-noteapp
                 port:
                   number: 80
-    - host: vhbj.site
+    - host: wsedf.online 
       http:
         paths:
           - path: /
@@ -32,6 +32,6 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - www.vhbj.site
-        - vhbj.site
-      secretName: chimdi247-co-tls
+        - www.wsedf.online 
+        - wsedf.online 
+      secretName: wsedf.online-co-tls
